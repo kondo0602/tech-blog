@@ -1,5 +1,12 @@
 ---
-import TimelineItem from './TimelineItem.astro';
+import TimelineItem from '@components/TimelineItem.astro';
+interface Props {
+  items: {
+    period: string;
+    title: string;
+    description: string;
+  }[];
+}
 
 const { items } = Astro.props;
 ---
