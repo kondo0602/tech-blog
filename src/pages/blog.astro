@@ -1,0 +1,35 @@
+---
+import MyLayout from '../layouts/MyLayout.astro';
+
+const pageTitle = 'Blog';
+const allPosts = await Astro.glob('../pages/posts/*.md');
+---
+
+<MyLayout title={pageTitle}>
+  <ul>
+    {
+      allPosts.map((post) => (
+        <li class="py-4">
+          <a href={post.url}>
+            <article>
+              <time class="text-secondary">{post.frontmatter.pubDate}</time>
+              <h2 class="text-primary text-2xl font-bold leading-8 tracking-tight">
+                {post.frontmatter.title}
+              </h2>
+              <div class="flex flex-wrap">
+                {post.frontmatter.tags.map((tag) => (
+                  <span class="text-sm text-primary bg-primary-100 rounded-full px-2 py-1 mr-2 mb-2">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <div class="prose max-w-none">
+                <p class="text-secondary">{post.frontmatter.description}</p>
+              </div>
+            </article>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</MyLayout>
