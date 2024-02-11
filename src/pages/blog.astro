@@ -12,28 +12,26 @@ const allPosts = await Astro.glob<Frontmatter>('../pages/posts/*.md');
 ---
 
 <MyLayout title={pageTitle}>
-  <ul>
+  <ul class="flex flex-col gap-8">
     {
       allPosts.map((post) => (
         <li class="py-4">
-          <a href="#">
-            <article>
-              <time class="text-secondary">{post.frontmatter.pubDate}</time>
+          <article class="flex flex-col gap-2">
+            <time class="text-secondary">{post.frontmatter.pubDate}</time>
+            <a href={post.url}>
               <h2 class="text-primary text-2xl font-bold leading-8 tracking-tight">
                 {post.frontmatter.title}
               </h2>
-              <div class="flex flex-wrap">
-                {post.frontmatter.tags.map((tag) => (
-                  <span class="text-sm text-primary bg-primary-100 rounded-full px-2 py-1 mr-2 mb-2">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <div class="prose max-w-none">
-                <p class="text-secondary">{post.frontmatter.description}</p>
-              </div>
-            </article>
-          </a>
+            </a>
+            <div class="flex flex-wrap gap-2">
+              {post.frontmatter.tags.map((tag) => (
+                <span class="text-accent">{tag}</span>
+              ))}
+            </div>
+            <div class="prose max-w-none">
+              <p class="text-secondary">{post.frontmatter.description}</p>
+            </div>
+          </article>
         </li>
       ))
     }
