@@ -5,13 +5,13 @@ interface Frontmatter {
   description: string;
   tags: string[];
 }
-import MyLayout from '@layouts/MyLayout.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
 
 const pageTitle = 'Blog';
 const allPosts = await Astro.glob<Frontmatter>('../pages/posts/*.md');
 ---
 
-<MyLayout title={pageTitle}>
+<BaseLayout title={pageTitle}>
   <ul class="flex flex-col gap-8">
     {
       allPosts.map((post) => (
@@ -36,4 +36,4 @@ const allPosts = await Astro.glob<Frontmatter>('../pages/posts/*.md');
       ))
     }
   </ul>
-</MyLayout>
+</BaseLayout>
