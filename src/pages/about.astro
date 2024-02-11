@@ -2,7 +2,6 @@
 import MyLayout from '../layouts/MyLayout.astro';
 import { Image } from 'astro:assets';
 import profileImage from './_images/profile.jpg';
-import TimelineItem from '../components/TimelineItem.astro';
 import Timeline from '../components/Timeline.astro'; // TimelineItemではなくTimelineをインポートするニゴ
 
 const pageTitle = 'About Me';
@@ -45,6 +44,7 @@ const timelineItems = [
       <div class="flex space-x-3 pt-6">
         <a
           class="text-sm text-gray-500 transition hover:text-gray-600"
+          href="https://twitter.com/kondo0602_t"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -64,6 +64,7 @@ const timelineItems = [
         </a>
         <a
           class="text-sm text-gray-500 transition hover:text-gray-600"
+          href="https://zenn.dev/kondo0602"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -95,6 +96,7 @@ const timelineItems = [
         </a>
         <a
           class="text-sm text-gray-500 transition hover:text-gray-600"
+          href="https://github.com/kondo0602"
           target="_blank"
           rel="noopener noreferrer"
         >
