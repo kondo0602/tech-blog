@@ -1,8 +1,8 @@
 ---
-import MyLayout from '@layouts/MyLayout.astro';
 import { Image } from 'astro:assets';
-import profileImage from './_images/profile.jpg';
-import Timeline from '@components/Timeline.astro'; // TimelineItemではなくTimelineをインポートするニゴ
+import profileImage from '@assets/profile.jpg';
+import Timeline from '@components/Timeline.astro';
+import MyLayout from '@layouts/MyLayout.astro';
 
 const pageTitle = 'About Me';
 const timelineItems = [
