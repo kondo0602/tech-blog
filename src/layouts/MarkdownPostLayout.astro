@@ -1,0 +1,11 @@
+---
+import MyLayout from './MyLayout.astro';
+
+const { frontmatter } = Astro.props;
+---
+
+<MyLayout title={frontmatter.title}>
+  <h1>{frontmatter.title}</h1>
+  <p>著者: {frontmatter.author}</p>
+  <slot />
+</MyLayout>
