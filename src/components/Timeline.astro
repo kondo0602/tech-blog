@@ -1,0 +1,17 @@
+---
+import TimelineItem from './TimelineItem.astro';
+
+const { items } = Astro.props;
+---
+
+<ol class="relative border-l border-gray-200 dark:border-gray-700">
+  {
+    items.map((item) => (
+      <TimelineItem
+        period={item.period}
+        title={item.title}
+        description={item.description}
+      />
+    ))
+  }
+</ol>
