@@ -3,8 +3,8 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-	integrations: [tailwind()],
-	experimental: {
+  integrations: [tailwind()],
+  experimental: {
     contentCollectionCache: true,
   },
 });
