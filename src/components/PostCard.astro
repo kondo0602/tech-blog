@@ -1,0 +1,35 @@
+---
+import Badge from "./Tag.astro";
+import Timestamp from "./Timestamp.astro";
+import clsx from "clsx";
+
+type Props = {
+  pubDate: Date;
+  url: string;
+  title: string;
+  tags: string[];
+  description: string;
+};
+
+const { pubDate, url, title, tags, description } = Astro.props;
+---
+
+<article class="flex flex-col gap-2">
+  <Timestamp date={pubDate} />
+  <a href={url}>
+    <h2
+      class={clsx(
+        ["text-2xl", "font-bold", "leading-8", "text-primary"],
+        ["hover:underline", "hover:underline-offset-4"],
+      )}
+    >
+      {title}
+    </h2>
+  </a>
+  <div class="flex flex-wrap gap-2">
+    {tags.map((tag) => <Badge tag={tag} />)}
+  </div>
+  <div class="prose max-w-none">
+    <p class="text-secondary">{description}</p>
+  </div>
+</article>
