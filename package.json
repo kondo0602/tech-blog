@@ -8,7 +8,8 @@
     "build": "astro check && tsc --noEmit && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "check": "biome check --apply ./src"
+    "check": "biome check --apply ./src",
+    "lint": "eslint 'src/**/*.astro'"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.2",
@@ -18,7 +19,12 @@
     "typescript": "^5.3.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.5.3",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-astro": "^0.31.4",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.13.0",
     "sharp": "^0.33.2"
   }
 }
