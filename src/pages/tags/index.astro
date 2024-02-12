@@ -1,21 +1,35 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Tag from "../../components/Tag.astro";
 
 const allPosts = await getCollection("posts");
-const tags: string[] = [
-  ...new Set(allPosts.map((post) => post.data.tags).flat()),
-];
-const pageTitle = "タグインデックス";
+const tagCounts: Record<string, number> = allPosts.reduce(
+  (acc: Record<string, number>, post) => {
+    post.data.tags.forEach((tag) => {
+      if (!acc[tag]) {
+        acc[tag] = 1;
+      } else {
+        acc[tag]++;
+      }
+    });
+    return acc;
+  },
+  {},
+);
+
+const tags = Object.entries(tagCounts).map(([tag, count]) => ({ tag, count }));
+const pageTitle = "Tags";
 ---
 
 <BaseLayout title={pageTitle}>
-  <div>
+  <div class="flex flex-wrap gap-4">
     {
       tags.map((tag) => (
-        <p class="text-accent">
-          <a href={`/tags/${tag}`}>{tag.toUpperCase()}</a>
-        </p>
+        <div class="flex items-center gap-2">
+          <Tag tag={tag.tag} />
+          <span class="text-primary">({tag.count})</span>
+        </div>
       ))
     }
   </div>
