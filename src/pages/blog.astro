@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
-import PostCard from "@components/PostCard.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import PostCard from "@components/PostCard.astro";
 
 const pageTitle = "Blog";
 const allPosts = await getCollection("posts");
@@ -10,14 +10,6 @@ const sortedPosts = allPosts.sort((a, b) => {
     new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
   );
 });
-
-const date = new Date("2023-01-23T01:23:45Z");
-const formated = new Intl.DateTimeFormat("ja-JP", {
-  dateStyle: "medium",
-  timeStyle: "medium",
-  timeZone: "Asia/Tokyo",
-}).format(date);
-console.log(formated);
 ---
 
 <BaseLayout title={pageTitle}>
