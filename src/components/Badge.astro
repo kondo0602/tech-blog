@@ -1,0 +1,22 @@
+---
+import clsx from 'clsx';
+
+type Props = {
+  tag: string;
+};
+
+const { tag } = Astro.props;
+---
+
+<span
+  class={clsx([
+    'mr-3',
+    'text-sm',
+    'font-medium',
+    'uppercase',
+    'text-accent',
+    'hover:text-primary-600',
+  ])}
+>
+  {tag}
+</span>
