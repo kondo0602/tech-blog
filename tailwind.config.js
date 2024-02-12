@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         primary: "#e2e8f0", // slate-200
-        secondary: "#64748b", // slate-500
+        secondary: "#94a3b8", // slate-400
         background: "#020617", // slate-950
         accent: "#f59e0b", // yellow-500
       },
