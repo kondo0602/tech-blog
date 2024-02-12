@@ -1,14 +1,9 @@
 ---
-interface Frontmatter {
-  title: string;
-  pubDate: string;
-  description: string;
-  tags: string[];
-}
+import { getCollection } from 'astro:content';
 import BaseLayout from '@layouts/BaseLayout.astro';
 
 const pageTitle = 'Blog';
-const allPosts = await Astro.glob<Frontmatter>('../pages/posts/*.md');
+const allPosts = await getCollection('posts');
 ---
 
 <BaseLayout title={pageTitle}>
@@ -17,19 +12,19 @@ const allPosts = await Astro.glob<Frontmatter>('../pages/posts/*.md');
       allPosts.map((post) => (
         <li class="py-4">
           <article class="flex flex-col gap-2">
-            <time class="text-secondary">{post.frontmatter.pubDate}</time>
-            <a href={post.url}>
+            <time class="text-secondary">{post.data.pubDate}</time>
+            <a href={`/posts/${post.slug}/`}>
               <h2 class="text-primary text-2xl font-bold leading-8 tracking-tight">
-                {post.frontmatter.title}
+                {post.data.title}
               </h2>
             </a>
             <div class="flex flex-wrap gap-2">
-              {post.frontmatter.tags.map((tag) => (
+              {post.data.tags.map((tag) => (
                 <span class="text-accent">{tag}</span>
               ))}
             </div>
             <div class="prose max-w-none">
-              <p class="text-secondary">{post.frontmatter.description}</p>
+              <p class="text-secondary">{post.data.description}</p>
             </div>
           </article>
         </li>
