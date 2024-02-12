@@ -1,0 +1,13 @@
+---
+type Props = {
+  date: Date;
+};
+
+const { date } = Astro.props;
+const formated = new Intl.DateTimeFormat("ja-JP", {
+  dateStyle: "long",
+  timeZone: "Asia/Tokyo",
+}).format(date);
+---
+
+<time class="text-secondary">{formated}</time>
