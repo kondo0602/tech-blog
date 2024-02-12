@@ -1,4 +1,5 @@
-module.exports = {
+/** @type {import("prettier").Config} */
+const config = {
   plugins: [
     'prettier-plugin-astro',
     'prettier-plugin-tailwindcss'
@@ -12,4 +13,7 @@ module.exports = {
     },
   ],
   tailwindConfig: './tailwind.config.js',
+  tailwindFunctions: ['clsx'],
 }
+
+export default config;
