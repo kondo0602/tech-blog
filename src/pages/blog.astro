@@ -1,10 +1,10 @@
 ---
-import { getCollection } from 'astro:content';
-import Badge from '@components/Badge.astro';
-import BaseLayout from '@layouts/BaseLayout.astro';
+import { getCollection } from "astro:content";
+import Badge from "@components/Badge.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
 
-const pageTitle = 'Blog';
-const allPosts = await getCollection('posts');
+const pageTitle = "Blog";
+const allPosts = await getCollection("posts");
 ---
 
 <BaseLayout title={pageTitle}>
@@ -15,7 +15,7 @@ const allPosts = await getCollection('posts');
           <article class="flex flex-col gap-2">
             <time class="text-secondary">{post.data.pubDate}</time>
             <a href={`/posts/${post.slug}/`}>
-              <h2 class="text-primary text-2xl font-bold leading-8 tracking-tight">
+              <h2 class="text-2xl font-bold leading-8 tracking-tight text-primary">
                 {post.data.title}
               </h2>
             </a>
