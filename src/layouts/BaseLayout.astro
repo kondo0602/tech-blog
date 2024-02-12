@@ -1,6 +1,7 @@
 ---
 import { ViewTransitions } from "astro:transitions";
 import Header from "@components/Header.astro";
+import clsx from "clsx";
 
 const { title } = Astro.props;
 ---
@@ -15,14 +16,12 @@ const { title } = Astro.props;
   <body class="bg-background">
     <Header title={title} />
     <section class="mx-auto max-w-3xl px-4">
-      <div class="space-y-2 border-b border-secondary pb-8 pt-6">
-        <h1
-          class="text-3xl font-extrabold leading-9 tracking-tight text-slate-200"
-        >
+      <div class={clsx(["py-4"], ["border-b", "border-secondary"])}>
+        <h1 class={clsx("text-3xl font-bold leading-8 text-primary")}>
           {title}
         </h1>
       </div>
-      <article>
+      <article class="py-4">
         <slot />
       </article>
     </section>
