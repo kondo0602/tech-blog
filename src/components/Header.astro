@@ -1,4 +1,6 @@
 ---
+import clsx from "clsx";
+
 interface Props {
   title: string;
 }
@@ -59,16 +61,44 @@ const { title } = Astro.props;
   <nav class="hidden items-center justify-between sm:flex">
     <div class="flex gap-4">
       <a href="/">
-        <span class="text-primary">Posts</span>
+        <span
+          class={clsx(
+            "/" === Astro.url.pathname && "text-accent",
+            "/" !== Astro.url.pathname && "text-primary",
+          )}
+        >
+          Posts
+        </span>
       </a>
       <a href="/tags">
-        <span class="text-primary">Tags</span>
+        <span
+          class={clsx(
+            "/tags" === Astro.url.pathname && "text-accent",
+            "/tags" !== Astro.url.pathname && "text-primary",
+          )}
+        >
+          Tags
+        </span>
       </a>
       <a href="/works">
-        <span class="text-primary">Works</span>
+        <span
+          class={clsx(
+            "/works" === Astro.url.pathname && "text-accent",
+            "/works" !== Astro.url.pathname && "text-primary",
+          )}
+        >
+          Works
+        </span>
       </a>
       <a href="/about">
-        <span class="text-primary">About</span>
+        <span
+          class={clsx(
+            "/about" === Astro.url.pathname && "text-accent",
+            "/about" !== Astro.url.pathname && "text-primary",
+          )}
+        >
+          About
+        </span>
       </a>
     </div>
   </nav>
