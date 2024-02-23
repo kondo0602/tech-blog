@@ -16,47 +16,6 @@ const { title } = Astro.props;
     </a>
     <span class="text-secondary">/</span>
     <span class="text-primary">{title}</span>
-    <button popovertarget="header-menu">
-      <svg
-        class="text-primary sm:hidden"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M6 9L12 15L18 9"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-        </path>
-      </svg>
-    </button>
-  </div>
-  <div
-    popover
-    id="header-menu"
-    class="absolute inset-0 left-48 top-16 m-2 bg-slate-900 text-primary"
-  >
-    <ul class="flex flex-col gap-2">
-      <li>
-        <a href="/">
-          <span class="text-primary">Posts</span>
-        </a>
-        <li>
-          <a href="/">
-            <span class="text-primary">Posts</span>
-          </a>
-        </li>
-        <li>
-          <a href="/">
-            <span class="text-primary">Posts</span>
-          </a>
-        </li>
-      </li>
-    </ul>
   </div>
   <nav class="hidden items-center justify-between sm:flex">
     <div class="flex gap-4">
@@ -78,16 +37,6 @@ const { title } = Astro.props;
           )}
         >
           Tags
-        </span>
-      </a>
-      <a href="/works">
-        <span
-          class={clsx(
-            "/works" === Astro.url.pathname && "text-primary",
-            "/works" !== Astro.url.pathname && "text-secondary",
-          )}
-        >
-          Works
         </span>
       </a>
       <a href="/about">
