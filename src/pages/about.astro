@@ -6,24 +6,30 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import { Icon } from "astro-icon/components";
 
 const pageTitle = "About";
+// TODO: それぞれにリンクを貼る
 const timelineItems = [
   {
-    period: "April 2023",
-    title: "",
-    description:
-      "All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.",
+    period: "2024.02",
+    title: "kondoshun.com",
+    description: "このブログを作りました。",
   },
   {
-    period: "April 2021",
-    title: "Frontend Development",
+    period: "2023.10",
+    title: "Dir Maker",
     description:
-      "All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.",
+      "ディレクトリ構成図を書くときに既存のディレクトリ構成図をコピーして編集するのが面倒だったため、簡単にディレクトリ構成図を書けるツールを作りました。",
   },
   {
-    period: "April 2017",
-    title: "Frontend Development",
+    period: "2023.07",
+    title: "BUNCHO MELTDOWN",
     description:
-      "All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.",
+      "地元の友達に遊んでもらうために、仙台・国分町が舞台のゲームを作りました。",
+  },
+  {
+    period: "2023.06",
+    title: "ポケモンSV すばやさ実数値LINEBOT",
+    description:
+      "ポケモン対戦を始めた友達のために、ポケモンのすばやさを調べるためのLINEBOTを作りました。",
   },
 ];
 ---
@@ -67,6 +73,11 @@ const timelineItems = [
       </div>
     </div>
     <div class="prose max-w-none pb-8 pt-8">
+      <h3
+        class="pb-2 pt-4 text-2xl font-bold leading-8 tracking-tight text-slate-200"
+      >
+        Works
+      </h3>
       <Timeline items={timelineItems} />
     </div>
   </div>
