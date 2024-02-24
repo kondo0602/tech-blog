@@ -3,32 +3,32 @@ import profileImage from "@assets/profile.jpg";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
-import dirMaker from "./dir-maker.png";
-import bunchoMeltdown from "./game.png";
-import pokemon from "./pokemon.png";
-import WorkCard from "../../components/WorkCard.astro";
 import Timeline from "@components/Timeline.astro";
 
 const pageTitle = "About";
 const timelineItems = [
   {
+    link: "https://kondoshun.com",
     period: "2024.02",
     title: "kondoshun.com",
     description: "このブログを作りました。",
   },
   {
+    link: "https://dir-maker.netlify.app/",
     period: "2023.10",
     title: "Dir Maker",
     description:
       "ディレクトリ構成図を書くときに既存のディレクトリ構成図をコピーして編集するのが面倒だったため、簡単にディレクトリ構成図を書けるツールを作りました。",
   },
   {
+    link: "https://buncho-meltdown.netlify.app/",
     period: "2023.07",
     title: "BUNCHO MELTDOWN",
     description:
       "地元の友達に遊んでもらうために、仙台・国分町が舞台のゲームを作りました。",
   },
   {
+    link: "https://liff.line.me/1645278921-kWRPP32q/?accountId=972fgaah",
     period: "2023.06",
     title: "ポケモンSV すばやさ実数値LINEBOT",
     description:

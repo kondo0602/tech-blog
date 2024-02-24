@@ -2,6 +2,7 @@
 import TimelineItem from "@components/TimelineItem.astro";
 interface Props {
   items: {
+    link: string;
     period: string;
     title: string;
     description: string;
@@ -15,6 +16,7 @@ const { items } = Astro.props;
   {
     items.map((item) => (
       <TimelineItem
+        link={item.link}
         period={item.period}
         title={item.title}
         description={item.description}
