@@ -4,25 +4,8 @@ import MyLayout from "@layouts/BaseLayout.astro";
 const { frontmatter } = Astro.props;
 ---
 
-<style is:global>
-  .markdown-body {
-    @apply text-primary;
-  }
-  .markdown-body h2 {
-    @apply my-4 text-2xl font-bold;
-  }
-
-  .markdown-body h3 {
-    @apply my-2 text-xl font-bold;
-  }
-
-  .markdown p {
-    @apply mb-4 leading-8;
-  }
-</style>
-
 <MyLayout title={frontmatter.title}>
-  <div class="markdown-body">
+  <div class="prose prose-invert">
     <slot />
   </div>
 </MyLayout>

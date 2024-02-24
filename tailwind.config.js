@@ -10,7 +10,7 @@ export default {
         backgroundBase: "#020617", // slate-950
         accent: "#f59e0b", // yellow-500
       },
-    },
+    }
   },
   plugins: [
     require('@tailwindcss/typography'),
