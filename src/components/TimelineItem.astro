@@ -11,20 +11,22 @@ type Props = {
 const { link, period, title, description } = Astro.props;
 ---
 
-<li class="mb-10 ms-4">
+<li class="mb-8 ms-4">
   <div
-    class="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-primary bg-gray-200"
+    class={clsx(
+      "absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-primary bg-primary",
+    )}
   >
   </div>
-  <time class="mb-1 text-sm font-normal leading-none text-secondary">
+  <time class={clsx("leading-none", "mb-2 px-2", "text-sm text-secondary")}>
     {period}
   </time>
   <a href={link} target="_blank" rel="noopener noreferrer">
-    <div class={clsx(["rounded-sm"], ["hover:bg-backgroundPale"])}>
+    <div class={clsx("p-2", "rounded-md", "hover:bg-backgroundPale")}>
       <h3 class="text-lg font-semibold text-primary">
         {title}
       </h3>
-      <p class="text-base font-normal text-secondary">
+      <p class="text-secondary">
         {description}
       </p>
     </div>

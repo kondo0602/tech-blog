@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import PostCard from "./PostCard.astro";
+import PostCard from "./PostCardListItem.astro";
 
 type Props = {
   posts: CollectionEntry<"posts">[];
@@ -12,15 +12,13 @@ const { posts } = Astro.props;
 <ul class="flex flex-col gap-8">
   {
     posts.map((post) => (
-      <li>
-        <PostCard
-          pubDate={post.data.pubDate}
-          url={`/posts/${post.slug}`}
-          title={post.data.title}
-          tags={post.data.tags}
-          description={post.data.description}
-        />
-      </li>
+      <PostCard
+        pubDate={post.data.pubDate}
+        url={`/posts/${post.slug}`}
+        title={post.data.title}
+        tags={post.data.tags}
+        description={post.data.description}
+      />
     ))
   }
 </ul>

@@ -8,7 +8,11 @@ const { title } = Astro.props;
 ---
 
 <header
-  class="sticky top-0 flex h-16 justify-between py-4 pl-4 pr-8 backdrop-blur-lg"
+  class={clsx(
+    "sticky top-0",
+    "flex h-16 justify-between py-4 pl-4 pr-8",
+    "backdrop-blur-lg",
+  )}
 >
   <div class="flex items-center gap-2">
     <a href="/">
