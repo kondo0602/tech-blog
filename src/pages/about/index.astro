@@ -1,12 +1,15 @@
 ---
-import { Image } from "astro:assets";
 import profileImage from "@assets/profile.jpg";
-import Timeline from "@components/Timeline.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import dirMaker from "./dir-maker.png";
+import bunchoMeltdown from "./game.png";
+import pokemon from "./pokemon.png";
+import WorkCard from "../../components/WorkCard.astro";
+import Timeline from "@components/Timeline.astro";
 
 const pageTitle = "About";
-// TODO: それぞれにリンクを貼る
 const timelineItems = [
   {
     period: "2024.02",
