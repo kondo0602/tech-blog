@@ -1,0 +1,87 @@
+---
+import profileImage from "@assets/profile.jpg";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import Timeline from "@components/Timeline.astro";
+
+const pageTitle = "About";
+const timelineItems = [
+  {
+    link: "https://kondoshun.com",
+    period: "2024.02",
+    title: "kondoshun.com",
+    description: "このブログを作りました。",
+  },
+  {
+    link: "https://dir-maker.netlify.app/",
+    period: "2023.10",
+    title: "Dir Maker",
+    description:
+      "ディレクトリ構成図を書くときに既存のディレクトリ構成図をコピーして編集するのが面倒だったため、簡単にディレクトリ構成図を書けるツールを作りました。",
+  },
+  {
+    link: "https://buncho-meltdown.netlify.app/",
+    period: "2023.07",
+    title: "BUNCHO MELTDOWN",
+    description:
+      "地元の友達に遊んでもらうために、仙台・国分町が舞台のゲームを作りました。",
+  },
+  {
+    link: "https://liff.line.me/1645278921-kWRPP32q/?accountId=972fgaah",
+    period: "2023.06",
+    title: "ポケモンSV すばやさ実数値LINEBOT",
+    description:
+      "ポケモン対戦を始めた友達のために、ポケモンのすばやさを調べるためのLINEBOTを作りました。",
+  },
+];
+---
+
+<BaseLayout title={pageTitle}>
+  <div class="items-start space-y-2">
+    <div class="flex flex-col items-center space-x-2 pt-8">
+      <Image
+        src={profileImage}
+        class="h-48 w-48 rounded-full"
+        alt="自分のアイコン"
+      />
+      <h3
+        class="pb-2 pt-4 text-2xl font-bold leading-8 tracking-tight text-slate-200"
+      >
+        Kondo Shun
+      </h3>
+      <span class="text-slate-400">Web Frontend Developer</span>
+      <div class="flex space-x-3 pt-6">
+        <a
+          href="https://twitter.com/kondo0602_t"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon name="simple-icons:twitter" class="text-white" size={24} />
+        </a>
+        <a
+          href="https://zenn.dev/kondo0602"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon name="simple-icons:zenn" class="text-white" size={24} />
+        </a>
+        <a
+          href="https://github.com/kondo0602"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon name="simple-icons:github" class="text-white" size={24} />
+        </a>
+      </div>
+    </div>
+    <div class="max-w-none pb-8 pt-8">
+      <h3
+        class="pb-2 pt-4 text-2xl font-bold leading-8 tracking-tight text-slate-200"
+      >
+        Works
+      </h3>
+      <Timeline items={timelineItems} />
+    </div>
+  </div>
+</BaseLayout>
